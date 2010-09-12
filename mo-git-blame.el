@@ -562,7 +562,9 @@ from elisp.
   (toggle-read-only t)
   (set-buffer-modified-p nil)
   (scroll-all-mode 1)
-  (setq truncate-lines t))
+  (setq truncate-lines t)
+  (when (fboundp 'buffer-face-mode)
+    (buffer-face-mode -1)))
 
 (defun mo-git-blame-read-file-name ()
   "Calls `read-file-name' or `ido-read-file-name' depending on
